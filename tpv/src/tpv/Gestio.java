@@ -36,7 +36,20 @@ public class Gestio {
 	}
 	//Afegir producte
 	static public void afegirProducte(){
-		productes.add(new Producte());
+		int num;
+		do {
+			System.out.println("Quants productes vols indtroduir?");
+			num=Integer.parseInt(teclat.nextLine());
+			if(num<=0){
+				System.out.println("S'ha d'introduir una quantitat major a 0.");
+			}
+		} while (num<=0);
+		
+		for (int i = 0; i < num; i++) {
+			productes.add(new Producte());
+		}
+		
+		
 	}
 	
 	//modificar dades producte
@@ -85,6 +98,36 @@ public class Gestio {
 		}
 	}
 	
+	//Eliminar producte
+	public static void eliminarProd(){
+		String resposta;
+		do {
+			int pos=buscarProd();
+			productes.remove(pos);
+			System.out.println("Vols eliminar algún producte més?");
+			resposta=teclat.nextLine();
+		} while (validarSiNo(resposta));
+	}
+	
+	//Aumentar quantitat producte
+	public static void augmentarStock(){
+		String resposta;
+		int quantitat;
+		do {
+			int pos=buscarProd();
+			do{
+				System.out.println("Introdueix quantitat:");
+				quantitat=Integer.parseInt(teclat.nextLine());
+				if(quantitat<=0){
+					System.out.println("S'ha d'introduir una quantitat major a 0.");
+				}
+			}while(quantitat<=0);
+			productes.get(pos).setQuantitat(quantitat);
+			System.out.println("Vols modificar stock d'algún producte més?");
+			resposta=teclat.nextLine();
+		} while (validarSiNo(resposta));
+	}
+	
 	//Menú del main
 	public static void menuPrincipal() {
 		int opcio;
@@ -97,7 +140,7 @@ public class Gestio {
 						+ "1. Afegir nou producte \n"
 						+ "2. Modificar producte\n"
 						+ "3. Eliminar producte\n"
-						+ "4. \n"
+						+ "4. Augmentar quantitat de producte\n"
 						+ "5. \n"
 						+ "6. \n"
 						+ "0. Eixir\n"
@@ -112,10 +155,10 @@ public class Gestio {
 							modificarProd();
 							break;
 						case 3:
-							
+							eliminarProd();
 							break;
 						case 4:
-							
+							augmentarStock();
 							break;
 						case 5:
 							
