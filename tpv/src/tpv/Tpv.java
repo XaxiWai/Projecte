@@ -11,10 +11,10 @@ public class Tpv {
 	public static int buscarProd(){
 		try {
 			System.out.println("Introdueix el codi de barres del producte: ");
-			int codi=Integer.parseInt(teclat.nextLine());
+			String codi=teclat.nextLine();
 		
 			for (int i = 0; i < productes.size(); i++) {
-				if (codi==productes.get(i).getCodiBarres()) {
+				if (productes.get(i).getCodiBarres().equalsIgnoreCase(codi)) {
 					return i;
 				}
 			}
@@ -68,7 +68,7 @@ public class Tpv {
 				switch (opcio) {
 				case 1:
 					System.out.println("Nou codi de barres: ");
-					int codi=Integer.parseInt(teclat.nextLine());
+					String codi=teclat.nextLine();
 					productes.get(posicio).setCodiBarres(codi);
 					break;
 				case 2:
