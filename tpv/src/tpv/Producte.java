@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Producte {
 	static Scanner teclat=new Scanner(System.in);
-	private int codiBarres;
+	private String codiBarres;
 	private String descripcio;
 	private double preuSense;
 	private double iva;
@@ -16,7 +16,7 @@ public class Producte {
 		for(int i=0;i>=0;i++){
 			try{
 				 System.out.println("Introdueix codi de barres:");
-				 this.codiBarres=Integer.parseInt(teclat.nextLine());
+				 this.codiBarres=teclat.nextLine();
 				 break;
 				}catch(NumberFormatException e){
 					System.out.println("Codi invàlid. Has d'introduir números.");
@@ -69,11 +69,11 @@ public class Producte {
 	}
 	
 	//getters i setters
-	public int getCodiBarres() {
+	public String getCodiBarres() {
 		return codiBarres;
 	}
 
-	public void setCodiBarres(int codiBarres) {
+	public void setCodiBarres(String codiBarres) {
 		this.codiBarres = codiBarres;
 	}
 
