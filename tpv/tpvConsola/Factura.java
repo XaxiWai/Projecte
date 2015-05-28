@@ -277,7 +277,6 @@ public class Factura {
 						suma=suma+tiquets.get(i).getTotal();
 						escriptor.write("\n"+tiquets.get(i).mostrarTiquetsFactura().toString());
 						escriptor.newLine();
-						escriptor.newLine();
 					}
 					
 				}
