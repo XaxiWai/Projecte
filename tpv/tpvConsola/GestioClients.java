@@ -100,7 +100,7 @@ public class GestioClients {
 						case 0:
 							break;
 						default:
-							System.out.println("Opció no vÃ lida");
+							System.out.println("Opció no vàlida");
 							break;
 						}
 						System.out.println("Vols modificar alguna cosa més d'aquest producte? (si/no)");
@@ -128,7 +128,7 @@ public class GestioClients {
 						while(rs.next()){
 							System.out.println("Client:\n"
 												+"\nCIF: "+rs.getString(1)
-												+"\nRaÃ³ social/nom: "+rs.getString(2)
+												+"\nRaó social/nom: "+rs.getString(2)
 												+"\nDomicili: "+rs.getString(3)
 												+"\nData d'alta: "+rs.getString(4));
 						}

@@ -17,7 +17,7 @@ public class Client {
 		System.out.println("Introdueix cif:");
 		this.cif=teclat.nextLine();
 	
-		System.out.println("Introdueix raÃ³ social/nom:");
+		System.out.println("Introdueix raó social/nom:");
 		this.raoSocial=teclat.nextLine();
 		
 		System.out.println("Introdueix domicili:");

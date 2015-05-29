@@ -29,7 +29,11 @@ public class Tiquet {
 			Client client=GestioClients.buscarClient(codi); //canviar a tipus Client
 			if(client == null){
 				System.out.println("El client no existeix.");
-			}else{
+			}
+			else if(client.isBaixa()){
+				System.out.println("El client està donat de baixa.");	
+			}
+			else{
 				do {
 					linia=new LiniaTiquet(this.id);
 					if(linia.getCodiLinia()!=null){//si em introduit el producte en la'array fara la linia, si no ix
